@@ -4,6 +4,7 @@ import com.robinhood.spark.SparkAdapter;
 
 /**
  * Created by matpa on 5/18/2016.
+ * SparkView for showing chart uses this class
  */
 public class FFTAdapter extends SparkAdapter {
     private double[] yData;

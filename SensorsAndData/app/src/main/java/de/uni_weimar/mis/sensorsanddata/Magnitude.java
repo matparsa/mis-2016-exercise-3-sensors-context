@@ -64,23 +64,23 @@ public class Magnitude {
         for (int i = 0; i < winSize; i++)
             _FFTResult[i] = Math.sqrt(actual[i] * actual[i] + imaginary[i] * imaginary[i]);
     }
-    public String GetActivity()
+    public int GetActivity()
     {
         //We calculated the average of  _FFTResult data and then recognize the activity
         double average = 0.0d;
         for(int i = 0 ; i < winSize ; i++){
             average += _FFTResult[i];
         }
-        average = average / winSize;
-        String activity="";
-        if(average < 10.0){
-            activity = "sitting";
+        average =Math.round( average / winSize);
+        int activity=0;
+        if(average <= 15.0){
+            activity = 0;
         }
-        else if(average < 15.0) {
-            activity = "walking";
+        else if(average <= 25.0) {
+            activity = 1;
         }
         else {
-            activity = "running";
+            activity = 2;
         }
         return activity;
     }
