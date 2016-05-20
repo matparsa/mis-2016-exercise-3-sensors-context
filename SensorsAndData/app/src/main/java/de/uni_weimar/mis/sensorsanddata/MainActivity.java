@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             public void run() {
                 try {
                     while (true) {
-                        sleep(5000);
+                        sleep(1000);
                         int activity = magnitudeData.GetActivity();
                         if (currentActivity != activity) {
                             int iconId = 0;
